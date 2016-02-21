@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+
+  "name": "Dopamine",
+  "description": "A simple task management system that tracks efficiency",
+  "version": "1.0",
+
+  
+  "browser_action": {
+    "default_icon": "assets/imgs/icon.png",
+    "default_popup": "src/popup.html"
+  },
+
+
+  "background": {
+    "scripts": ["src/background.js"]
+  },
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
+
+
+
+
+
+
+
+

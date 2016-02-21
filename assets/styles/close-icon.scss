@@ -1,0 +1,111 @@
+// COLORS //
+
+$white: #FFFFFF;
+
+$blue: #0070B5;
+$lightblue: #B5E3FF;
+
+$gray: #666666;
+$lightgray: #D9D9D9;
+
+
+
+.close{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+
+  top: 50%;
+  margin-top: -10px;
+  right: 0px;
+
+
+  &:hover {
+    &::before, &::after {
+      background: $blue;
+    }
+  }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: 1px;
+    background: #000;
+  }
+  &::before {
+    transform: rotate(45deg);
+  }
+  &::after {
+    transform: rotate(-45deg);
+  }
+  &.big {
+    transform: scale(3);
+  }
+  &.hairline {
+    &::before, &::after {
+      height: 1px;
+    }
+  }
+  &.thick {
+    &::before, &::after {
+      height: 4px;
+      margin-top: -2px;
+    }
+  }
+  &.black {
+    &::before, &::after {
+      height: 8px;
+      margin-top: -4px;
+    }
+  }
+  &.heavy {
+    &::before, &::after {
+      height: 12px;
+      margin-top: -6px;
+    }
+  }
+  &.pointy {
+    &::Before, &::after {
+      width: 200%;
+      left: -50%;
+    }
+  }
+  &.rounded {
+    &::before, &::after {
+      border-radius: 5px;
+    }
+  }
+  &.blades {
+    &::before, &::after {
+      border-radius: 5px 0;
+    }
+  }
+  &.warp {
+    &::before, &::after {
+      border-radius: 120% 0;
+    }
+  }
+  &.fat {
+    &::before, &::after {
+      border-radius: 100%;
+    }
+  }
+}
+
+small {
+  display: block;
+  padding: 5rem;
+  font: .8rem/1 sans-serif;
+  color: #777;
+  text-align: center;
+}
+small a { 
+  color: $blue; 
+  text-decoration: none; 
+  border-bottom: 1px solid #ccc; 
+}
+small a:hover { border-bottom-color: #222; }

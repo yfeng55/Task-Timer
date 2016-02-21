@@ -1,0 +1,307 @@
+@import 'bootstrap.min';
+@import 'close-icon';
+@import url('https://fonts.googleapis.com/css?family=Lato:400,100,300,500,700,900');
+
+
+// COLORS //
+
+$white: #FFFFFF;
+
+$blue: #0070B5;
+$lightblue: #F0F8FF;
+
+$gray: #666666;
+$lightgray: #D9D9D9;
+
+
+body{
+	font-family: 'Lato';
+	font-size: 12px;
+}
+a:focus { outline:0; }
+#header a:hover { color: $lightblue; }
+#header{
+	width: 100%;
+	background-color: $blue;
+	color: $white;
+	font-family: 'Lato';
+	font-weight: 100;
+	font-size: 14px;
+	letter-spacing: 1.5px;
+	height: 37px;
+	line-height: 37px;
+	padding-left: 10px;
+}
+#header a{
+	color: $white;
+}
+#refresh{
+	float:right;
+	margin-right: 10px;
+	line-height: 37px;
+	font-size: 15px;
+}
+
+
+
+#container{
+	width: 270px;
+	min-height: 70px;
+	position: relative;
+
+	/*top, right, bottom, left*/
+	margin: 10px 10px 20px 10px; 
+}
+
+#header{
+	padding-bottom: 15px;
+	border-bottom: 1px solid $lightgray;
+}
+
+
+// TIMER SCREEN //
+
+#timer-screen{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	z-index: 100;
+
+	background-color: $white;
+	color: $gray;
+	display: none;
+	text-align: center;
+
+	padding:10px;
+	a{
+		color: $gray;
+	}
+}
+
+#countdown {
+    color: $blue;
+    font-size: 38px;
+    letter-spacing: .2em;
+    font-weight: 700;
+    text-align: center;
+}
+
+#current-task{
+	color: $lightgray;
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#done-timer-screen {
+    margin-top: 20px;
+    width: 150px;
+    border-radius: 0px;
+    height: 38px;
+    line-height: 0px;
+    font-size: 15px;
+}
+
+
+
+// LIST SCREEN //
+
+#list-container{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	z-index: 0;
+}
+
+
+.task-item{
+	position: relative;
+
+	&:hover{
+		background-color: $lightblue;
+	
+		.circle{
+			border: 2px solid $blue;
+		}
+	}
+}
+
+.circle {
+
+	display:inline;
+	float:left;
+	cursor: pointer;
+	margin-right: 10px;
+
+	position: absolute;
+	top: 50%;
+	margin-top:-9px;
+
+	border: 1px solid $lightgray;
+	border-radius: 50%;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+	filter: alpha(opacity=60);
+	opacity: 0.6;
+
+	-webkit-box-shadow: 0 0 1px 0px rgb( 255, 255, 255);
+	box-shadow: 0 0 1px 0px rgb( 255, 255, 255);
+	width: 17px;
+	height: 17px;
+	z-index: 86;
+
+	-webkit-transition: background-color .1s ease-in-out;
+	-moz-transition: background-color .1s ease-in-out;
+	-o-transition: background-color .1s ease-in-out;
+	-ms-transition: background-color .1s ease-in-out;
+	transition: background-color .1s ease-in-out;
+
+
+	&.completed{
+		cursor:default;
+		border: 2px solid $blue;
+	}
+	&.completed:hover{
+		cursor:default;
+		border: 2px solid $blue;
+	}
+}
+
+
+
+
+.clickable-area{
+	cursor: pointer;
+    height: inherit;
+    padding-top: 13px;
+    padding-bottom: 13px;
+
+    &.completed{
+		cursor: default;
+	}
+
+}
+
+
+
+.delete-button {
+	float: right;
+
+	&:focus { outline:0; }
+}
+
+.timestamp{
+
+	font-size: 11px;
+	color: $gray;
+	font-style: italic;
+
+	margin-top: -9px;
+	margin-right: 25px;
+
+	position: absolute;
+	top: 50%;
+	right: 0px;	
+
+}
+
+.completed .timestamp{
+	margin-top: -15px;
+}
+.finish-time{
+	float: right;
+	color: $blue;
+}
+
+
+ul {
+    padding: 0;
+    list-style-type: none;
+    max-height: 450px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+
+li{
+	list-style-type: none;
+
+	// padding-top: 13px;
+	// padding-bottom: 13px;
+
+	border-bottom: 1px solid $lightgray;
+	vertical-align: middle;
+}
+
+.list_text{
+	display: block;
+	width: 170px;
+	word-wrap: break-word;
+	margin-left: 27px;
+}
+
+.completed{
+	/*background-color: $lightblue;*/
+	color: $blue;
+	font-style: italic;
+}
+
+.incomplete{
+	
+}
+
+
+
+
+.list-item{
+	margin: 0px;
+	display: inline;
+}
+
+
+
+
+#newtask-field{
+	border-bottom: 1px solid $lightgray;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding: 5px 10px 5px 10px;
+    font-size: 13px;
+    font-family: Lato;
+
+
+    &:focus { 
+    	outline:0; 
+    	border-bottom: 1px solid $blue;
+    }
+    &:hover {
+    	border-bottom: 1px solid $blue;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
